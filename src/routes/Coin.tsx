@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Routes, Route, useLocation, useParams, useMatch } from "react-router-dom";
 import styled from "styled-components";
 import Chart from "./Chart";
@@ -207,10 +207,7 @@ function Coin() {
                             <Link to={`/${coinId}/price`}>Price</Link>
                         </Tab>
                     </Tabs>
-                    <Routes>
-                        <Route path="price" element={<Price />} />
-                        <Route path="chart" element={<Chart />} />
-                    </Routes>
+                    <Outlet />
                 </>
             )}
         </Container>
