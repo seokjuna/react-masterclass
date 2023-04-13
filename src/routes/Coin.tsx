@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { Routes, Route, useLocation, useParams, useMatch } from "react-router-dom";
+import { useLocation, useParams, useMatch } from "react-router-dom";
 import styled from "styled-components";
-import Chart from "./Chart";
-import Price from "./Price";
 
 const Title = styled.h1`
     font-size: 48px;
@@ -40,6 +38,7 @@ const OverviewItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 33%;
     span:first-child {
         font-size: 10px;
         font-weight: 400;
@@ -70,6 +69,7 @@ const Tab = styled.span<{ isActive: boolean }>`
     color: ${(props) =>
     props.isActive ? props.theme.accentColor : props.theme.textColor};
     a {
+        padding: 7px 0px;
         display: block;
     }
 `;
