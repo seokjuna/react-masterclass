@@ -1,4 +1,4 @@
-import Router from "./routes/Router";
+import Router from "./Router";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
