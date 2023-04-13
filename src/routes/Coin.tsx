@@ -1,8 +1,10 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { useLocation, useParams, useMatch } from "react-router-dom";
 import styled from "styled-components";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCoinInfo, fetchCoinTickers } from "../api";
+import Price from "./Price";
+import Chart from "./Chart";
 
 const Title = styled.h1`
     font-size: 48px;
@@ -196,7 +198,10 @@ function Coin() {
                             <Link to={`/${coinId}/price`}>Price</Link>
                         </Tab>
                     </Tabs>
-                    <Outlet />
+                    <Routes>
+                        <Route path="price" element={<Price />} />
+                        <Route path="chart" element={<Chart coinId={coinId!} />} />
+                    </Routes>
                 </>
             )}
         </Container>
